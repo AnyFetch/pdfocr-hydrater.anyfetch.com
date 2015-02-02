@@ -4,8 +4,8 @@ node_js:
   - "0.10"
 services:
   - redis-server
-before_install:
 
 install:
   - sudo apt-get install tesseract-ocr
   - npm install
+  - npm run-script lint
