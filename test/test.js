@@ -15,8 +15,8 @@ describe('Test HYDRATER results', function() {
 		pdfocr(__dirname + "./test.pdf", document, changes, function(err, changes){
 			if (err){
 				throw err;
-			}
-		})
+			} 
+		});
 		done();
 	});
 });
