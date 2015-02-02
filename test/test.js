@@ -3,6 +3,7 @@
 require('should');
 var anyfetchHydrater = require('anyfetch-hydrater');
 var pdfocr = require('../lib/');
+
 var HydrationError = anyfetchHydrater.HydrationError;
 
 describe('Test PDFOCR results', function() {
