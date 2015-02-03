@@ -8,4 +8,6 @@ services:
 install:
   - sudo apt-get install tesseract-ocr
   - npm install
+
+script:
   - npm run-script lint

@@ -14,18 +14,13 @@ describe('Test PDFOCR results', function() {
       };
 
       var changes = anyfetchHydrater.defaultChanges();
-      pdfocr(__dirname + "/samples/test.pdf", document, changes, function(err, changes){
-          if (err){
-              throw err;
+      pdfocr(__dirname + "/samples/test.pdf", document, changes, function(err, changes) {
+          if(err) {
+            throw err;
           }
-          fs.readFile(__dirname + '/samples/dump.txt', function(err, res) {
-            if (err) {
-              throw err;
-            }
-            changes.metadata.should.containDeep(res.toString());
-
-            done();
-          });
+          var data = fs.readFileSync(__dirname + '/samples/dump.txt');
+          changes.metadata.should.eql(data.toString());
+          done();
         });
     });
 
@@ -35,9 +30,8 @@ describe('Test PDFOCR results', function() {
     };
 
     var changes = anyfetchHydrater.defaultChanges();
-
     pdfocr(__dirname + "/samples/bad.pdf", document, changes, function(err) {
-      if(err instanceof HydrationError) {
+      if(err) {
         done();
       }
       else {
@@ -45,5 +39,4 @@ describe('Test PDFOCR results', function() {
       }
     });
   });
-
 });
