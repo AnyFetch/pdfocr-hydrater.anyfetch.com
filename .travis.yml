@@ -1,0 +1,14 @@
+language: node_js
+
+node_js:
+  - "0.10"
+services:
+  - redis-server
+
+install:
+  - sudo apt-get install tesseract-ocr
+  - npm install
+
+script:
+  - npm test
+  - npm run-script lint
