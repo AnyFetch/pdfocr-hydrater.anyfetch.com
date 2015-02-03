@@ -31,7 +31,7 @@ describe('Test PDFOCR results', function() {
 
     var changes = anyfetchHydrater.defaultChanges();
     pdfocr(__dirname + "/samples/bad.pdf", document, changes, function(err) {
-      if(err) {
+      if(err instanceof HydrationError) {
         done();
       }
       else {
