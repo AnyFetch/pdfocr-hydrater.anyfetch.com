@@ -1,5 +1,4 @@
-{Tesseract sample image. The quick brown fox jumps over the lazy dog.
+Tesseract sample image. The quick brown fox jumps over the lazy dog.
 
 Tesseract sample image. The quick brown fox jumps over the lazy dog.
 
-}
