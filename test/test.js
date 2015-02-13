@@ -19,7 +19,7 @@ describe('Test PDFOCR results', function() {
         throw err;
       }
       var data = fs.readFileSync(__dirname + '/samples/dump-2img.txt');
-      changes.metadata.should.eql(data.toString());
+      changes.metadata.text.should.eql(data.toString());
       done();
     });
   });
@@ -35,7 +35,7 @@ describe('Test PDFOCR results', function() {
           throw err;
         }
         var data = fs.readFileSync(__dirname + '/samples/dump-11img.txt');
-        changes.metadata.should.eql(data.toString());
+        changes.metadata.text.should.eql(data.toString());
         done();
       });
   });
